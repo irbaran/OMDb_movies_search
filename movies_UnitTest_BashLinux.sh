@@ -3,16 +3,16 @@
 ########################################################
 
 # Defines
-RUNSTS_ERROR=0		# Run status error
-RUNSTS_OK=1			# Run status ok
+RUNSTS_ERROR=0      # Run status error
+RUNSTS_OK=1         # Run status ok
 
 #Variables
-count_run_sucess=0	# Counter of tests with success
-count_run_error=0	# Counter of tests with error
-count_runs=0		# Counter of tests runs
-start_time=0		# Start test time
-end_time=0			# End test time
-elapsed=0			# Elapsed test time
+count_run_sucess=0  # Counter of tests with success
+count_run_error=0   # Counter of tests with error
+count_runs=0        # Counter of tests runs
+start_time=0        # Start test time
+end_time=0          # End test time
+elapsed=0           # Elapsed test time
 
 # Function to counter results
 # First parameter $1 indicates expected result "OK" or "ERROR"

@@ -31,18 +31,18 @@ using namespace std;
 using namespace rapidjson;
 
 //User menu difines
-#define NONE_SEL			0 	// No selection
-#define HELP_SEL			1 	// Parameter selected help
-#define TITLE_MOVIE_SEL		2	// Parameter selected search movies by title
-#define MEDIA_TYPE_SEL		3	// Selected by media type
+#define NONE_SEL            0    // No selection
+#define HELP_SEL            1    // Parameter selected help
+#define TITLE_MOVIE_SEL     2    // Parameter selected search movies by title
+#define MEDIA_TYPE_SEL      3    // Selected by media type
 
 //Status errors
-#define RUNSTS_ERROR		0	// Run main status error
-#define RUNSTS_OK			1	// Run main status ok
+#define RUNSTS_ERROR        0    // Run main status error
+#define RUNSTS_OK           1    // Run main status ok
 
 //URL and JSON parser errors
-#define ERROR_BUFFER_SHORT	1	// Buffer to short from OMDb
-#define ERROR_JSON_PARSE	2	// JSON parse error
+#define ERROR_BUFFER_SHORT  1    // Buffer to short from OMDb
+#define ERROR_JSON_PARSE    2    // JSON parse error
 
 
 //////////////////////////
@@ -50,8 +50,8 @@ using namespace rapidjson;
 /////////////////////////
 void help(void)
 {
-	const int help_num_lines = 4; 	// define a quantidade de nomes no array
-	const int help_line_size = 80;	// define o tamanho maximo do nome
+	const int help_num_lines = 4;     // define a quantidade de nomes no array
+	const int help_line_size = 80;    // define o tamanho maximo do nome
 	int i;		//for iterator
 	char help_str[help_num_lines][help_line_size] = 
 		{	"  -h             -- Show this help list.",
@@ -68,16 +68,16 @@ void help(void)
 /////////////////////////
 string user_menu(int argc, char** argv)
 {
-	int arg;								// argument iterator
-	int user_menu_error_sts = RUNSTS_OK;	// Menu function status error
-	int menu_select	= NONE_SEL;				// menu selected function
-	int help_request = 0;					// Indicates help user cli request
-	string title;							// Title from user parameter line when option -s
-	string media_type;						// Media type from user parameter line when option -t
-	string url;								// URL string mounter
-	int count_menu_param_s = 0;				// Count user menu parameter s
-	int count_menu_param_t = 0;				// Count user menu parameter t
-	string curr_argv;						// Current argument string
+	int arg;                                // argument iterator
+	int user_menu_error_sts = RUNSTS_OK;    // Menu function status error
+	int menu_select	= NONE_SEL;             // menu selected function
+	int help_request = 0;                   // Indicates help user cli request
+	string title;                           // Title from user parameter line when option -s
+	string media_type;                      // Media type from user parameter line when option -t
+	string url;                             // URL string mounter
+	int count_menu_param_s = 0;             // Count user menu parameter s
+	int count_menu_param_t = 0;             // Count user menu parameter t
+	string curr_argv;                       // Current argument string
 
 	//User parameter menu extraction
 	for( arg = 1; arg < argc; arg++ )
@@ -204,7 +204,7 @@ return size*nmemb;
 /////////////////////////
 int	json_print(string curl_buffer)
 {
-	int json_error_sts = RUNSTS_OK;		// JSON function status error
+	int json_error_sts = RUNSTS_OK;     // JSON function status error
 	
 	// JSON parse
 	const char* json = curl_buffer.c_str();
@@ -248,8 +248,8 @@ int	json_print(string curl_buffer)
 /////////////////////////
 int omdb_request(string url)
 {
-	int omdb_error_sts = RUNSTS_OK;		// OMDb function status error
-	int omdb_error_sts_tmp;				// OMDb function status error temporary
+	int omdb_error_sts = RUNSTS_OK;     // OMDb function status error
+	int omdb_error_sts_tmp;             // OMDb function status error temporary
 	
 	if (url != "Invalid")
 	{
@@ -306,8 +306,8 @@ int omdb_request(string url)
 /////////////////////////
 int main(int argc, char** argv) 
 {
-	string url;								// URL string mounter
-	int main_error_sts;						// Main function status error
+	string url;                             // URL string mounter
+	int main_error_sts;                     // Main function status error
 	
 	//Capture user command line and generates URL
 	url = user_menu(argc, argv);
