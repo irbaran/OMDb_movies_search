@@ -168,7 +168,7 @@ string user_menu(int argc, char** argv)
 		
 	}
 
-	if (((argc > 1) && (help_request == 1)) || (count_menu_param_s > 1) || (count_menu_param_t > 1)) 
+	if (((argc > 2) && (help_request == 1)) || (count_menu_param_s > 1) || (count_menu_param_t > 1)) 
 		cout << "Incorrect number of arguments\n";
 
 
