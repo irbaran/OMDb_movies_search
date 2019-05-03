@@ -1,4 +1,4 @@
-IMDb Movies Search 
+OMDb Movies Search 
 
 The project was developed using Cygwin 64bits (GNU and Open Source tools).
 Main libraries using in development: curl and rapidjson 
